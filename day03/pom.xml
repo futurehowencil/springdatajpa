@@ -4,12 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>springdatajpa</artifactId>
-        <groupId>com.com.fziqan</groupId>
+        <groupId>com.fziqan</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>day02</artifactId>
+    <artifactId>day03</artifactId>
 
     <properties>
         <spring.version>4.2.4.RELEASE</spring.version>
