@@ -114,6 +114,11 @@ public class CustomerDaoTest {
                 return cb.equal(root.get("custName").as(String.class), "老陈");
             }
         };
+        //使用lambda表达式
+        Specification<Customer> specification1 = ((root, query, cb) ->{ return cb.equal(root.get("").as(String.class), "");});
+        Specification<Customer> specification2 = (root, query, cb) ->{ return cb.equal(root.get("").as(String.class), "");};
+        Specification<Customer> specification3 = (root, query, cb) -> cb.equal(root.get("").as(String.class), "");
+
         Customer one = customerDao.findOne(spec);
         System.out.println(one);
     }
