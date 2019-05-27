@@ -122,7 +122,5 @@ public class CustomerDaoTest {
         Customer one = customerDao.findOne(spec);
         System.out.println(one);
     }
-
-
 }
 
