@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
@@ -44,6 +45,8 @@ public class ManyTableTest {
     }
 
     @Test
+    @Transactional
+    @Rollback(false)
     public void findTest02() {
         LinkMan linkMan = linkManDao.findOne(1L);
         //对象导航查询
