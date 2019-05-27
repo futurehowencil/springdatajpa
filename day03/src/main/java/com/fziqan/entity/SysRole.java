@@ -29,6 +29,18 @@ public class SysRole implements Serializable {
     private String roleMemo;
 
     //多对多关系映射
+    /**
+     * @ManyToMany ://多对多
+     * @JoinTable: 关联中间表的注解  用户id 角色id
+     * name：user_role_rel用户角色关系表名
+     * joinColumns：角色表和中间表关联字段配置
+     *      name:role_id（中间表中的字段 ） referencedColumnName（角色表的主键id）
+     * <p>
+     * inverseJoinColumns：多对多另一方用户表和中间表关联字段配置
+     *      name:user_id（中间表中的字段 ） referencedColumnName（用户表的主键id）
+     *
+     *      通过角色来维护用户和角色表之间的关系
+     */
 //    @ManyToMany(mappedBy = "roles")
 //    @JoinTable(name="user_role_rel",//中间表的名称
 //            //中间表user_role_rel字段关联sys_role表的主键字段role_id
@@ -37,6 +49,7 @@ public class SysRole implements Serializable {
 //            inverseJoinColumns={@JoinColumn(name="user_id",referencedColumnName="user_id")}
 //    )
 //    private Set<SysUser> users = new HashSet<SysUser>(0);
+//    ManyToMany：多对多注解：mappedBy="users" 用户这方放弃了维护关系权限
     @ManyToMany(mappedBy="roles")
     private Set<SysUser> users = new HashSet<SysUser>(0);
 

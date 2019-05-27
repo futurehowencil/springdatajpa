@@ -48,12 +48,14 @@ public class ManyToManyTest {
     public void addTest() {
         //1.创建对象
         SysUser user = new SysUser();
-        user.setUserName("用户1");
+        user.setUserName("用户4");
         SysRole role = new SysRole();
-        role.setRoleName("角色1");
+        role.setRoleName("角色4");
         //2.建立关联关系
         user.getRoles().add(role);
-        role.getUsers().add(user);
+
+        //放弃维护的一方可注释可不注释
+//        role.getUsers().add(user);
         //3.保存
         userDao.save(user);
         roleDao.save(role);
@@ -69,7 +71,7 @@ public class ManyToManyTest {
     @Transactional
     @Rollback(false)
     public void deleteTest() {
-        //  userDao.delete(1L);
-        roleDao.delete(1L);
+          userDao.delete(1L);
+//        roleDao.delete(3L);
     }
 }
